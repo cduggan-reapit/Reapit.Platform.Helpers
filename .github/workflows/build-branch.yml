@@ -1,0 +1,56 @@
+name: Build and Test Branch
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  branch-build:
+    name: Build and Test Branch
+    runs-on: ubuntu-latest
+    if: ${{ false }}
+    steps:
+      # Setup environment
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+      
+      # Build project
+      - name: build solution
+        run: |
+          dotnet restore ./src/
+          dotnet build ./src/ --no-restore
+      
+      # Run Tests
+      - name: test solution
+        run: dotnet test ./src/ --no-build --logger trx --results-directory test-results --collect:"xplat code coverage"
+      - name: save test results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: test-results/*.trx
+      
+      # Create report
+      - name: generate code coverage report
+        run: |
+          mkdir code-coverage
+          cp ./test-results/*/coverage.cobertura.xml ./test-results/coverage.cobertura.xml
+          dotnet tool install -g dotnet-reportgenerator-globaltool
+          reportgenerator -reports:"test-results/coverage.cobertura.xml" -targetdir:"code-coverage" -reporttypes:Html
+      - name: save code coverage report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage
+          path: code-coverage
+
+      

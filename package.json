@@ -1,0 +1,30 @@
+{
+  "name": "reapit-platform-helpers",
+  "version": "1.0.0",
+  "description": "Handy methods that make development easier",
+  "scripts": {
+    "test": "dotnet test ./src/",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cduggan-reapit/Reapit.Platform.Helpers.git"
+  },
+  "author": "Craig Duggan",
+  "bugs": {
+    "url": "https://github.com/cduggan-reapit/Reapit.Platform.Helpers/issues"
+  },
+  "homepage": "https://github.com/cduggan-reapit/Reapit.Platform.Helpers#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@droidsolutions-oss/semantic-release-nuget": "^2.0.1",
+    "@droidsolutions-oss/semantic-release-update-file": "^1.4.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+	"@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^13.0.0",
+    "husky": "^9.0.11"
+  }
+}

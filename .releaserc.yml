@@ -1,0 +1,30 @@
+branches:
+  - main
+
+plugins:
+  - "@semantic-release/commit-analyzer"
+  - 
+    - "@semantic-release/changelog"
+    - changelogFile: 'docs/CHANGELOG.md'
+  - "@semantic-release/release-notes-generator"
+  -
+    - "@droidsolutions-oss/semantic-release-update-file"
+    - files:
+      - type: xml
+        path:
+        - "src/Example/Example.csproj"
+        replacements:
+        - key: Version
+          value: ${nextRelease.version}
+  -
+    - "@semantic-release/git"
+    - assets:
+      - path: docs/CHANGELOG.md
+        label: changelog
+      - path: src/Example/Example.csproj
+        label: project
+  -
+    - "@semantic-release/github"
+  -
+    - "@semantic-release/exec"
+    - successCmd: "echo VERSION_CREATED=${nextRelease.version} >> $GITHUB_ENV"
