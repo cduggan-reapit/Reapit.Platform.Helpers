@@ -1,15 +1,11 @@
 name: Build and Test Branch
 
-on: 
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   branch-build:
     name: Build and Test Branch
     runs-on: ubuntu-latest
-    if: ${{ false }}
     steps:
       # Setup environment
       - name: checkout

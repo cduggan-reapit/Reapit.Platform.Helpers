@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reapit.Platform.Helpers", "Reapit.Platform.Helpers\Reapit.Platform.Helpers.csproj", "{D0479F86-5202-4AFA-92C9-7C0A10282EAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reapit.Platform.Helpers.Tests", "Reapit.Platform.Helpers.Tests\Reapit.Platform.Helpers.Tests.csproj", "{1A5147CE-1B7E-448F-B8D1-E44DF020A943}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D405FA5-48EC-498D-B90C-FC5659C33270}"
+	ProjectSection(SolutionItems) = preProject
+		..\.commitlintrc.yml = ..\.commitlintrc.yml
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+		..\.releaserc.yml = ..\.releaserc.yml
+		..\package.json = ..\package.json
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{E29A7461-C439-4DDD-8140-48F1FABB7604}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\CODEOWNERS = ..\.github\CODEOWNERS
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{12F00875-EAE3-4084-99A9-ABCB89405CAA}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\build-branch.yml = ..\.github\workflows\build-branch.yml
+		..\.github\workflows\commit-linting.yml = ..\.github\workflows\commit-linting.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0479F86-5202-4AFA-92C9-7C0A10282EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0479F86-5202-4AFA-92C9-7C0A10282EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0479F86-5202-4AFA-92C9-7C0A10282EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0479F86-5202-4AFA-92C9-7C0A10282EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5147CE-1B7E-448F-B8D1-E44DF020A943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5147CE-1B7E-448F-B8D1-E44DF020A943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5147CE-1B7E-448F-B8D1-E44DF020A943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5147CE-1B7E-448F-B8D1-E44DF020A943}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E29A7461-C439-4DDD-8140-48F1FABB7604} = {9D405FA5-48EC-498D-B90C-FC5659C33270}
+		{12F00875-EAE3-4084-99A9-ABCB89405CAA} = {E29A7461-C439-4DDD-8140-48F1FABB7604}
+	EndGlobalSection
+EndGlobal
