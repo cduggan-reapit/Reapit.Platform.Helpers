@@ -41,6 +41,13 @@ public class CollectionExtensionsTests
         actual.Should().BeFalse();
     }
 
+    [Fact]
+    public void ContainsAny_ReturnsFalse_WhenComparisonSetIsNull()
+    {
+        var sut = new[] { 1, 2, 3 };
+        var actual = sut.ContainsAny(null);
+        actual.Should().BeFalse();
+    }
 
     [Fact]
     public void ContainsAny_ReturnsFalse_WhenComparisonSetEmpty()
