@@ -1,8 +1,11 @@
 ﻿using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Reapit.Platform.Helpers.Temporal;
 
 /// <summary>Execution context for the <see cref="DateTimeOffsetProvider"/> class</summary>
+/// <remarks>This is excluded from code coverage as it's behaviour is tested through <see cref="DateTimeOffsetProvider" /></remarks>
+[ExcludeFromCodeCoverage]
 public class DateTimeOffsetProviderContext : IDisposable
 {
     internal DateTimeOffset Timestamp;
