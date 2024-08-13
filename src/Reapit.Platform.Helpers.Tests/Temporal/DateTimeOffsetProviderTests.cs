@@ -16,5 +16,18 @@ public class DateTimeOffsetProviderTests
         var fixedTimestamp = new DateTimeOffset(2016, 4, 16, 7, 53, 14, TimeSpan.FromHours(-5));
         using var ambientContext = new DateTimeOffsetProviderContext(fixedTimestamp);
         DateTimeOffsetProvider.Now.Should().Be(fixedTimestamp);
-    }   
+    }
+    
+    [Fact]
+    public void Now_OnlyAppliesToScope_WhenContextConfiguredInUsingContext()
+    {
+        var fixedTimestamp = new DateTimeOffset(2016, 4, 16, 7, 53, 14, TimeSpan.FromHours(-5));
+        
+        using (var _ = new DateTimeOffsetProviderContext(fixedTimestamp))
+        {
+            DateTimeOffsetProvider.Now.Should().Be(fixedTimestamp);
+        }
+        
+        DateTimeOffsetProvider.Now.Should().BeCloseTo(DateTimeOffset.UtcNow, TimeSpan.FromMilliseconds(3));
+    }
 }

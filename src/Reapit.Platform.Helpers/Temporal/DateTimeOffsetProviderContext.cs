@@ -7,7 +7,6 @@ public class DateTimeOffsetProviderContext : IDisposable
 {
     internal DateTimeOffset Timestamp;
     private static readonly ThreadLocal<Stack> ThreadScopeStack = new (() => new Stack());
-    private Stack _contextStack = new ();
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DateTimeOffsetProviderContext"/> class
